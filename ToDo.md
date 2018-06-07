@@ -3,7 +3,7 @@
 [None]
 
 ## Additional Features
-[None]
+- Player vs CPU
 
 ## Adjustments
 [None]
