@@ -1,0 +1,22 @@
+@media(max-width: 1823px){
+  .start-header h1{
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+  .start-header h2{
+    font-size: 2.0em;
+    text-align: center;
+    margin: 0;
+  }  
+}
+@media(max-width: 767px){
+  .start-header h1{
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+  .start-header h2{
+    text-align: center;
+    margin: 0;
+  }
+}
