@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selectedPreference: false
+      selectedPreference: true
     };
     this.selectPlayerOption = this.selectPlayerOption.bind(this);
   }
