@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Game from './components/Game';
-import StartMenu from './components/StartMenu';
+import Game from './components/Game/Game';
+import StartMenu from './components/Menu/StartMenu';
 
 class App extends Component {
   constructor(props){

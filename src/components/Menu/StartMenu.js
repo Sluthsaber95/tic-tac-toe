@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import SelectionBtn from './SelectionBtn';
 import StartHeader from './StartHeader';
 import StatusComingSoon from './StatusComingSoon';
-import './../App.css';
+import './../../App.css';
 import './StartMenu.css';
 
 class StartMenu extends Component {

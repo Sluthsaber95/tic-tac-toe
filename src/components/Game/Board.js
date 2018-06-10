@@ -19,24 +19,16 @@ class Board extends Component {
     super(props);
     this.state = {
       board: Array(9).fill(null),
-      playerTurn: true
+      playerTurn: true,
+      winnerFound: false
     };
     this.changePlayer = this.changePlayer.bind(this);
     this.updateBoard = this.updateBoard.bind(this);
+    this.checkWinningConditions = this.checkWinningConditions.bind(this);
   }
-  updateBoard(index){
+  checkWinningConditions(){
     const currentBoard = this.state.board;
-    const object = {};
-    object[index] = this.state.playerTurn? "X" : "O";
-    this.setState({ updateBoard: Object.assign(currentBoard, object)})
-  }
-  changePlayer(){
-    this.setState({ playerTurn: !this.state.playerTurn });
-  }
-  componentDidUpdate(){
-    console.log(this.state.board);
-    const currentBoard = this.state.board;
-    const valuePlayed = this.state.playerTurn? "O" : "X";
+    const valuePlayed = this.state.playerTurn ? 'O' : 'X';
     const filledArray = currentBoard.map((e, i) => {
       return e === valuePlayed ? i : null;
     })
@@ -44,14 +36,27 @@ class Board extends Component {
       .map(array => array
         .every(element => filledArray.includes(element)))
       .some(element => element === true);
-    if(winnerFound === true){
-      alert(`Winner is ${valuePlayed}`)
+    if (winnerFound === true) {
+      alert(`Winner is ${valuePlayed} and it's the player's turn right, ${!this.state.playerTurn}`)
     }
+  }
+  updateBoard(index){
+    const currentBoard = this.state.board;
+    currentBoard[index] = this.state.playerTurn? 'X' : 'O';
+    this.setState({ updateBoard: Object.assign(currentBoard, currentBoard)});
+    console.log("This should fire first go")
+    this.props.updateGameStatus(this.state.playerTurn)
+  }
+  changePlayer(){
+    this.setState({ playerTurn: !this.state.playerTurn });
+  }
+  componentDidUpdate(){
+    this.checkWinningConditions();
   }
   render() {
     return (
-      <section className="board-container">
-        <article className="board-wrapper">
+      <section className='board-container'>
+        <article className='board-wrapper'>
             <Square index={0} changePlayer={this.changePlayer} playerTurn={this.state.playerTurn} updateBoard={this.updateBoard}/>
             <Square index={1} changePlayer={this.changePlayer} playerTurn={this.state.playerTurn} updateBoard={this.updateBoard}/>
             <Square index={2} changePlayer={this.changePlayer} playerTurn={this.state.playerTurn} updateBoard={this.updateBoard}/>
