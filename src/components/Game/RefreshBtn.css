@@ -1,0 +1,10 @@
+.refresh-btn-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.refresh-btn {
+  background: none;
+  border: 1px solid black;
+}

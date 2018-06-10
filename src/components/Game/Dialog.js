@@ -14,16 +14,14 @@ const randomQuote = {
   ]
 }
 
-class Dialog extends Component {
-  render() {
+const Dialog = (props) => {
     return (
       <section className='dialog-container'>
         <article className='dialog-box'>
-          <h3>Computer:</h3>
-          <p>{randomQuote.tease[2]}</p>
+          <h3>{props.status}</h3>
+          <p>"{randomQuote.tease[2]}"</p>
         </article>
       </section>
     );
-  }
 }
 export default Dialog;

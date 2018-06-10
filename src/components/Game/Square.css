@@ -1,6 +1,6 @@
-.board-square {
-  background: steelblue;
-  border: none;
+.square {
+  background: white;
+  border: 1px solid black;
   width: 100px;
   height: 100px;
   font-size: 80px;
