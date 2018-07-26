@@ -20,17 +20,18 @@ class StartMenu extends Component {
             </div>
           </article>
           <article className="selection-btn-container">
-            <SelectionBtn selectPlayerOption={this.props.selectPlayerOption}
+            <SelectionBtn
               playerSelection="Single Player" 
               btnDescription="You and the machine, battle it out"
-            />
-            <SelectionBtn 
-              playerSelection="Two Player" 
-              btnDescription="You and an arch nemesis" 
               disabled="true"
             />
+            <SelectionBtn 
+              selectPlayerOption={this.props.selectPlayerOption} 
+              playerSelection="Two Player" 
+              btnDescription="You and an arch nemesis" 
+            />
           </article>
-          <StatusComingSoon message="[ Two Player Mode - Coming Soon ]"/>
+          <StatusComingSoon message="[ One Player Mode - Coming Soon ]"/>
         </article>
       </section>
     );
